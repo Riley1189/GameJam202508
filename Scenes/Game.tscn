@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq3ve6tt4k8lt"]
+[gd_scene load_steps=4 format=3 uid="uid://dq3ve6tt4k8lt"]
 
 [ext_resource type="Script" uid="uid://dpr7o1agvwi5s" path="res://Scripts/GameManager.gd" id="1_gl6un"]
 [ext_resource type="Texture2D" uid="uid://oyw0k4qyeuky" path="res://AssetBundle/Sprites/ForestBackground.png" id="1_iukft"]
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_gl6un")
+[sub_resource type="TileSet" id="TileSet_b2bpf"]
+
+[node name="Scene" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_iukft")
@@ -13,3 +14,6 @@ metadata/_edit_lock_ = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_b2bpf")
