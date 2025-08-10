@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dq3ve6tt4k8lt"]
+[gd_scene load_steps=4 format=3 uid="uid://dq3ve6tt4k8lt"]
 
 [ext_resource type="PackedScene" uid="uid://gthlqgoxtecq" path="res://Scenes/Player1.tscn" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://c1h7mupxevddy" path="res://Scenes/Player2.tscn" id="2_j5yw3"]
+
+[sub_resource type="TileSet" id="TileSet_b2bpf"]
 
 [node name="Scene" type="Node2D"]
 
@@ -12,3 +14,6 @@
 [node name="Player1" parent="." instance=ExtResource("1_gl6un")]
 
 [node name="Player2" parent="." instance=ExtResource("2_j5yw3")]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_b2bpf")
