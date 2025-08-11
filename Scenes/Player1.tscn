@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://d2fu72ypw23p5"]
 
-[ext_resource type="Script" uid="uid://xsgkmmfnnpin" path="res://Scripts/player_1.gd" id="1_n5fpy"]
+[ext_resource type="Script" uid="uid://xsgkmmfnnpin" path="res://Scripts/Player1.gd" id="1_n5fpy"]
 [ext_resource type="Texture2D" uid="uid://co1yw7u7ong20" path="res://Sprites/Modern_Exteriors_Characters_Scout_16x16_3.png" id="2_dvont"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5fpy"]
