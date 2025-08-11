@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://dq3ve6tt4k8lt"]
+[gd_scene load_steps=15 format=4 uid="uid://dq3ve6tt4k8lt"]
 
 [ext_resource type="TileSet" uid="uid://ts035pq3b2su" path="res://Sprites/Tileset.tres" id="1_2irst"]
 [ext_resource type="Texture2D" uid="uid://dx5x7dnp4ndbw" path="res://Sprites/2_City_Terrains_16x16.png" id="2_kldst"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://3kobbf68h4u" path="res://Sprites/4_Generic_Buildings_16x16.png" id="5_fgofq"]
 [ext_resource type="Texture2D" uid="uid://btch6dgo7njpq" path="res://Sprites/11_Camping_16x16.png" id="6_2irst"]
 [ext_resource type="Texture2D" uid="uid://dkany00m7ywt4" path="res://Sprites/1_Terrains_and_Fences_16x16.png" id="7_2irst"]
-[ext_resource type="Texture2D" uid="uid://co1yw7u7ong20" path="res://Sprites/Modern_Exteriors_Characters_Scout_16x16_3.png" id="8_2irst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71axn"]
 texture = ExtResource("2_kldst")
@@ -15393,98 +15392,6 @@ sources/3 = SubResource("TileSetAtlasSource_3cx6b")
 sources/4 = SubResource("TileSetAtlasSource_wxwew")
 sources/6 = SubResource("TileSetAtlasSource_acvyw")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bf53h"]
-atlas = ExtResource("8_2irst")
-region = Rect2(0, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_71axn"]
-atlas = ExtResource("8_2irst")
-region = Rect2(16, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dahhg"]
-atlas = ExtResource("8_2irst")
-region = Rect2(32, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3so38"]
-atlas = ExtResource("8_2irst")
-region = Rect2(48, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3cx6b"]
-atlas = ExtResource("8_2irst")
-region = Rect2(64, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wxwew"]
-atlas = ExtResource("8_2irst")
-region = Rect2(80, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_acvyw"]
-atlas = ExtResource("8_2irst")
-region = Rect2(96, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_alh3a"]
-atlas = ExtResource("8_2irst")
-region = Rect2(112, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4q8tf"]
-atlas = ExtResource("8_2irst")
-region = Rect2(128, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x3xnh"]
-atlas = ExtResource("8_2irst")
-region = Rect2(144, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8r6kd"]
-atlas = ExtResource("8_2irst")
-region = Rect2(160, 192, 16, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tfod6"]
-atlas = ExtResource("8_2irst")
-region = Rect2(176, 192, 16, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_rajel"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bf53h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_71axn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dahhg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3so38")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3cx6b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wxwew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_acvyw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_alh3a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4q8tf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x3xnh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8r6kd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tfod6")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [node name="Scene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -15503,10 +15410,3 @@ tile_set = SubResource("TileSet_alh3a")
 
 [node name="Layer-Tool" type="TileMapLayer" parent="Layer-Ground"]
 tile_set = ExtResource("1_2irst")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-position = Vector2(-20, -14)
-sprite_frames = SubResource("SpriteFrames_rajel")
-frame_progress = 0.668791
