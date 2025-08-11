@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+
+#movement
 @export var move_speed: float=100.0
 @export var speed_effect: float=0.0 #+加速-减速
 
@@ -8,17 +10,25 @@ extends CharacterBody2D
 @export var can_up: float = true
 @export var can_down: float = true
 
-
+#animation
 @export var animator: AnimatedSprite2D
 @export var tool_scene: PackedScene
 
-var is_on_fire: bool = false
+var is_visible: bool=true
+
+#action
 var is_new_round = true
 @export var new_round_wait_time=4.0
 
 var is_game_over: bool = false
 
+
+var is_on_fire: bool = false
+
 var health: float=100
+var damage_effect: float=0.0#用于减少/增加伤害的 +暴击buff
+var defend_effect: float=0.0#用于减少/增加伤害的 -易伤buff
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -38,14 +48,17 @@ func _process(delta: float) -> void:
 			is_new_round=false
 			return
 			
+		#movement
+		if not is_visible:
+			$AnimatedSprite2D.visible=is_visible
 		velocity=Input.get_vector("left1","right1","up1","down1")*move_speed*(1+speed_effect)
 		if !can_left and velocity.x<0:
 			velocity.x=0
-		if !can_right and velocity.x>0:
+		elif !can_right and velocity.x>0:
 			velocity.x=0
-		if !can_up and velocity.y<0:
+		elif !can_up and velocity.y<0:
 			velocity.y=0
-		if !can_down and velocity.y>0:
+		elif !can_down and velocity.y>0:
 			velocity.y=0
 			
 		if velocity==Vector2.ZERO:
@@ -62,17 +75,48 @@ func _process(delta: float) -> void:
 		
 		move_and_slide()
 		
+		#攻击相关
 		_on_fire()
+		
 		if health<0:
 			is_game_over=true
 	
 #新的一轮重新随机选区，以及重新选择武器；先不随机选区了。
 #这个需要gamemanager来调用他的函数。把参数属性tool传过来
 #只是用于接收属性tool本身，不控制角色的运动（角色的运动本身仍然放在_process中
-func new_round(area_num: int,tool: PackedScene,speed_e: float) ->void: 
+func new_round_change(tools_number1:int,effect_number1:int) ->void: 
 #	随机选区暂时不实现
-	tool_scene=tool
-	speed_effect=speed_e
+	#首先是先把基础数值给设置会初始参数
+	defend_effect=0
+	damage_effect=0
+	speed_effect=0
+	is_visible=true
+	can_left=true
+	can_right=true
+	can_up=true
+	match effect_number1:
+		1:
+			defend_effect=-0.2
+		2:
+			damage_effect=0.1
+		3:
+			speed_effect=0.2
+		4:
+			is_visible=false
+		5:
+			var rand=randi_range(1,4)
+			match rand:
+				1:
+					can_left=false
+				2:
+					can_right=false
+				3:
+					can_up=false
+				4:
+					can_down=false
+		6:
+			speed_effect=-0.2
+			
 	
 	
 	
