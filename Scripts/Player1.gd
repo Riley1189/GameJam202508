@@ -50,8 +50,15 @@ func _process(delta: float) -> void:
 			
 		if velocity==Vector2.ZERO:
 			animator.play("Idle")
-		else:
-			animator.play("Run") #之后稍微扩展一下动画
+		# 四个方向的动画
+		elif velocity.x<0:
+			animator.play("RunLeft") 
+		elif velocity.x>0:
+			animator.play("RunRight")
+		elif velocity.y>0:
+			animator.play("RunDown")
+		elif velocity.y<0:
+			animator.play("RunUp")
 		
 		move_and_slide()
 		
