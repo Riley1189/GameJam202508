@@ -1,13 +1,15 @@
-[gd_scene load_steps=16 format=4 uid="uid://dq3ve6tt4k8lt"]
+[gd_scene load_steps=18 format=4 uid="uid://dq3ve6tt4k8lt"]
 
 [ext_resource type="TileSet" uid="uid://ts035pq3b2su" path="res://Sprites/Tileset.tres" id="1_2irst"]
 [ext_resource type="Script" uid="uid://dpr7o1agvwi5s" path="res://Scripts/GameManager.gd" id="1_bf53h"]
+[ext_resource type="PackedScene" uid="uid://d1yfpbsntchpb" path="res://Scenes/Dice.tscn" id="2_71axn"]
 [ext_resource type="Texture2D" uid="uid://dx5x7dnp4ndbw" path="res://Sprites/2_City_Terrains_16x16.png" id="2_kldst"]
 [ext_resource type="Texture2D" uid="uid://bumqa237486mn" path="res://Sprites/3_City_Props_16x16.png" id="3_b2bpf"]
 [ext_resource type="Texture2D" uid="uid://c71ipwwb86wwp" path="res://Sprites/13_School_16x16.png" id="4_7lihs"]
 [ext_resource type="Texture2D" uid="uid://3kobbf68h4u" path="res://Sprites/4_Generic_Buildings_16x16.png" id="5_fgofq"]
 [ext_resource type="Texture2D" uid="uid://btch6dgo7njpq" path="res://Sprites/11_Camping_16x16.png" id="6_2irst"]
 [ext_resource type="Texture2D" uid="uid://dkany00m7ywt4" path="res://Sprites/1_Terrains_and_Fences_16x16.png" id="7_2irst"]
+[ext_resource type="PackedScene" uid="uid://d2fu72ypw23p5" path="res://Scenes/Player1.tscn" id="9_bf53h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71axn"]
 texture = ExtResource("2_kldst")
@@ -16006,6 +16008,7 @@ sources/6 = SubResource("TileSetAtlasSource_acvyw")
 
 [node name="Scene" type="Node2D"]
 script = ExtResource("1_bf53h")
+dice_roll = ExtResource("2_71axn")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
@@ -16026,5 +16029,7 @@ tile_set = SubResource("TileSet_alh3a")
 [node name="Layer-Tool" type="TileMapLayer" parent="Layer-Ground"]
 tile_map_data = PackedByteArray("AAAGAAIAAgARABkAAAAGAAMAAgARABoAAAD2/wQAAgAIAGgAAAD2/wUAAgAIAGkAAAD2/wYAAgAIAGoAAAD2/wcAAgAUAAsAAAD2/wgAAgAUAAwAAADr//X/AgAQABQAAADs//X/AgARABQAAADu//P/AgAcACUAAADu//T/CQABADkAAADu//X/CQABADoAAADv//T/CQACADkAAADv//X/CQACADoAAADw//T/CQADADkAAADw//X/CQADADoAAADx//X/CQAEADoAAAD8//j/AgAaABIAAAD8//n/AgAaABMAAAD8//r/AgAaABQAAAD8//v/AgAaABUAAAD9//j/AgAbABIAAAD9//n/AgAbABMAAAD9//r/AgAbABQAAAD9//v/AgAbABUAAAD6//j/AgAaABIAAAD6//n/AgAaABMAAAD6//r/AgAaABQAAAD6//v/AgAaABUAAAD7//j/AgAbABIAAAD7//n/AgAbABMAAAD7//r/AgAbABQAAAD7//v/AgAbABUAAAAQAPj/AgAaABIAAAAQAPn/AgAaABMAAAAQAPr/AgAaABQAAAAQAPv/AgAaABUAAAARAPj/AgAbABIAAAARAPn/AgAbABMAAAARAPr/AgAbABQAAAARAPv/AgAbABUAAAAOAPj/AgAaABIAAAAOAPn/AgAaABMAAAAOAPr/AgAaABQAAAAOAPv/AgAaABUAAAAPAPj/AgAbABIAAAAPAPn/AgAbABMAAAAPAPr/AgAbABQAAAAPAPv/AgAbABUAAAAFAPj/CAAGAAsAAAAFAPn/CAAGAAwAAAAFAPr/CAAGAA0AAAAGAPj/CAAHAAsAAAAGAPn/CAAHAAwAAAAGAPr/CAAHAA0AAAARAP7/CQAaABUAAAARAP//CQAaABYAAAARAAAACQAaABcAAAARAAEACQAaABgAAAASAP7/CQAbABUAAAASAP//CQAbABYAAAASAAAACQAbABcAAAASAAEACQAbABgAAAATAP//CQAcABYAAAATAAAACQAcABcAAAATAAEACQAcABgAAAAUAP//CQAdABYAAAAUAAAACQAdABcAAAAUAAEACQAdABgAAAAVAP//CQAeABYAAAAVAAAACQAeABcAAAAVAAEACQAeABgAAAAWAP//CQAfABYAAAAWAAAACQAfABcAAAAWAAEACQAfABgAAAD9/wMACQANAEoAAAD9/wQACQANAEsAAAD9/wUACQANAEwAAAD+/wMACQAOAEoAAAD+/wQACQAOAEsAAAD+/wUACQAOAEwAAAD//wMACQAPAEoAAAD//wQACQAPAEsAAAD//wUACQAPAEwAAAAAAAQACQAQAEsAAAAAAAUACQAQAEwAAADt//X/CQAAADoAAADt//b/CQAAADsAAADt//f/CQAAADwAAADt//j/CQAAAD0AAADu//b/CQABADsAAADu//f/CQACAEAAAADu//j/CQACAEEAAADv//b/CQACADsAAADv//f/CQADAEAAAADv//j/CQADAEEAAADw//b/CQADADsAAADw//f/CQADADwAAADw//j/CQADAD0AAADx//b/CQAEADsAAADx//f/CQAEADwAAADx//j/CQAEAD0AAADy//X/CQAFADoAAADy//b/CQAFADsAAADy//f/CQAFADwAAADy//j/CQAFAD0AAADz//b/CQAGADsAAADz//f/CQAGADwAAADz//j/CQAGAD0AAADr//b/AgAQABUAAADr//f/AgAQABYAAADs//b/AgARABUAAADs//f/AgARABYAAAD//wYACQAMAEEAAAD//wcACQAMAAEAAAD//wgACQAMAAIAAAD//wkACQAMAAMAAAAAAAcACQANAAEAAAAAAAgACQANAAIAAAAAAAkACQANAAMAAAABAAcACQAOAAEAAAABAAgACQAOAAIAAAABAAkACQAOAAMAAAACAAgACQAPAAIAAAACAAkACQAPAAMAAADo/wcACQAAAAkAAADo/wgACQAAAAoAAADo/wkACQAAAAsAAADp/wcACQABAAkAAADp/wgACQABAAoAAADp/wkACQABAAsAAADq/wcACQACAAkAAADq/wgACQACAAoAAADq/wkACQACAAsAAADr/wgACQADAAoAAADr/wkACQADAAsAAAA=")
 tile_set = ExtResource("1_2irst")
+
+[node name="Player1" parent="." instance=ExtResource("9_bf53h")]
 
 [connection signal="timeout" from="Timer" to="." method="one_round"]

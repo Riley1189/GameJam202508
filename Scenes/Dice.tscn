@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://d1yfpbsntchpb"]
+[gd_scene load_steps=35 format=3 uid="uid://d1yfpbsntchpb"]
 
 [ext_resource type="Texture2D" uid="uid://bdhkojkocyii" path="res://Sprites/dice.png" id="1_dcpc8"]
-[ext_resource type="Script" uid="uid://c1ly5jyq1rrlo" path="res://Scripts/Dice.gd" id="1_wpqjs"]
+[ext_resource type="Script" uid="uid://cen0mbplwanus" path="res://Scripts/Dice.gd" id="1_wpqjs"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn3s8"]
 atlas = ExtResource("1_dcpc8")
@@ -99,6 +99,30 @@ region = Rect2(64, 160, 32, 32)
 atlas = ExtResource("1_dcpc8")
 region = Rect2(96, 160, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcpc8"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui6m0"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7mxx"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jy71g"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aks1"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aue5e"]
+atlas = ExtResource("1_dcpc8")
+region = Rect2(32, 160, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_1a7br"]
 animations = [{
 "frames": [{
@@ -177,11 +201,75 @@ animations = [{
 "loop": true,
 "name": &"Rolling",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcpc8")
+}],
+"loop": true,
+"name": &"roll1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui6m0")
+}],
+"loop": true,
+"name": &"roll2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7mxx")
+}],
+"loop": true,
+"name": &"roll3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jy71g")
+}],
+"loop": true,
+"name": &"roll4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aks1")
+}],
+"loop": true,
+"name": &"roll5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aue5e")
+}],
+"loop": true,
+"name": &"roll6",
+"speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_wpqjs"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_wpqjs")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_1a7br")
 animation = &"Rolling"
-script = ExtResource("1_wpqjs")
+autoplay = "Rolling"
+script = SubResource("GDScript_wpqjs")

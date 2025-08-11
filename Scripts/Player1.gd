@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed: float=50.0
+@export var move_speed: float=100.0
 @export var speed_effect: float=0.0 #+加速-减速
 
 @export var can_left: float = true
@@ -13,6 +13,9 @@ extends CharacterBody2D
 @export var tool_scene: PackedScene
 
 var is_on_fire: bool = false
+var is_new_round = true
+@export var new_round_wait_time=4.0
+
 var is_game_over: bool = false
 
 var health: float=100
@@ -20,13 +23,21 @@ var health: float=100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	await get_tree().create_timer(new_round_wait_time).timeout
+	is_new_round=false
+	animator.play("Idle")
+	
 	#velocity=Vector2(50,0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if not is_game_over:
+		if is_new_round: #如果说新的一局在开始轮属性和tools，记得等待new_round_wait_time
+			await get_tree().create_timer(new_round_wait_time).timeout
+			is_new_round=false
+			return
+			
 		velocity=Input.get_vector("left1","right1","up1","down1")*move_speed*(1+speed_effect)
 		if !can_left and velocity.x<0:
 			velocity.x=0
@@ -49,6 +60,8 @@ func _process(delta: float) -> void:
 			is_game_over=true
 	
 #新的一轮重新随机选区，以及重新选择武器；先不随机选区了。
+#这个需要gamemanager来调用他的函数。把参数属性tool传过来
+#只是用于接收属性tool本身，不控制角色的运动（角色的运动本身仍然放在_process中
 func new_round(area_num: int,tool: PackedScene,speed_e: float) ->void: 
 #	随机选区暂时不实现
 	tool_scene=tool
