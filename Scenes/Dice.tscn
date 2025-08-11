@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://d1yfpbsntchpb"]
+[gd_scene load_steps=34 format=3 uid="uid://d1yfpbsntchpb"]
 
 [ext_resource type="Texture2D" uid="uid://bdhkojkocyii" path="res://Sprites/dice.png" id="1_dcpc8"]
 [ext_resource type="Script" uid="uid://cen0mbplwanus" path="res://Scripts/Dice.gd" id="1_wpqjs"]
@@ -251,20 +251,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="GDScript" id="GDScript_wpqjs"]
-script/source = "extends AnimatedSprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wpqjs")
 
@@ -272,4 +258,5 @@ script = ExtResource("1_wpqjs")
 sprite_frames = SubResource("SpriteFrames_1a7br")
 animation = &"Rolling"
 autoplay = "Rolling"
-script = SubResource("GDScript_wpqjs")
+frame = 4
+frame_progress = 0.667693
