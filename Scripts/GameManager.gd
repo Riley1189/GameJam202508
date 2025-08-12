@@ -30,7 +30,7 @@ func _ready() -> void:
 	var effect_number1=randi_range(1,6)
 	dice_node_effect1._roll_number(effect_number1)
 	
-	$Player1.new_round_change(tools_number1,effect_number1)
+	#$Player1.new_round_change(tools_number1,effect_number1)
 	
 			
 	
