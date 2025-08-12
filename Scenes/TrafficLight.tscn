@@ -80,14 +80,15 @@ size = Vector2(10, 69)
 [node name="TrafficLight" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
 texture = ExtResource("1_ii5tt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-0.5, -12.5)
+position = Vector2(-0.5, -44.5)
 sprite_frames = SubResource("SpriteFrames_nb6fy")
 animation = &"idle"
-frame_progress = 0.226043
+frame_progress = 0.635524
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_ii5tt")
