@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://coo8jdkvkniy4"]
+
+[ext_resource type="Texture2D" uid="uid://dksuaip2i71bx" path="res://Sprites/ME_Singles_City_Props_16x16_Traffic_Light_1.png" id="1_ii5tt"]
+[ext_resource type="Texture2D" uid="uid://bjakly534ugbh" path="res://Sprites/Stoplight_16x16.png" id="1_p8d8v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c53qk"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(0, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0rwj"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(11, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7fip"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(22, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7bfe"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(33, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neldm"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(44, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nqg6i"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(55, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qmgw"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(66, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcowg"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(77, 0, 11, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02rr4"]
+atlas = ExtResource("1_p8d8v")
+region = Rect2(88, 0, 11, 27)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb6fy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c53qk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0rwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7fip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q7bfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neldm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nqg6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qmgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcowg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02rr4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ii5tt"]
+size = Vector2(10, 69)
+
+[node name="TrafficLight" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_ii5tt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.5, -44.5)
+sprite_frames = SubResource("SpriteFrames_nb6fy")
+animation = &"idle"
+frame_progress = 0.635524
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_ii5tt")
