@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bte812k2lfxnd"]
 
-[ext_resource type="Texture2D" uid="uid://b3qwtuumcmwqw" path="res://Sprites/Museum_Singles_44.png" id="1_v3k8d"]
+[ext_resource type="Texture2D" uid="uid://b3qwtuumcmwqw" path="res://Sprites/Museum_Singles_44.png" id="1_2befj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3k8d"]
 
@@ -10,4 +10,4 @@
 shape = SubResource("CircleShape2D_v3k8d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_v3k8d")
+texture = ExtResource("1_2befj")
