@@ -1,7 +1,11 @@
-[gd_scene load_steps=52 format=3 uid="uid://d2fu72ypw23p5"]
+[gd_scene load_steps=56 format=3 uid="uid://d2fu72ypw23p5"]
 
 [ext_resource type="Script" uid="uid://xsgkmmfnnpin" path="res://Scripts/Player1.gd" id="1_n5fpy"]
 [ext_resource type="Texture2D" uid="uid://co1yw7u7ong20" path="res://Sprites/Modern_Exteriors_Characters_Scout_16x16_3.png" id="2_dvont"]
+[ext_resource type="PackedScene" uid="uid://bte812k2lfxnd" path="res://Scenes/Tools/Antique.tscn" id="2_i047d"]
+[ext_resource type="PackedScene" uid="uid://dwb370g7xbwij" path="res://Scenes/Tools/Hydrant.tscn" id="3_hjvw7"]
+[ext_resource type="PackedScene" uid="uid://coo8jdkvkniy4" path="res://Scenes/Tools/TrafficLight.tscn" id="4_tchc4"]
+[ext_resource type="PackedScene" uid="uid://bh3kmehode8x4" path="res://Scenes/Tools/TrashCan.tscn" id="5_h0l6a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n5fpy"]
 atlas = ExtResource("2_dvont")
@@ -382,6 +386,10 @@ height = 16.0
 [node name="PlayerBase" type="CharacterBody2D" node_paths=PackedStringArray("animator")]
 script = ExtResource("1_n5fpy")
 animator = NodePath("AnimatedSprite2D")
+tool_antique = ExtResource("2_i047d")
+tool_hydrant = ExtResource("3_hjvw7")
+tool_traffic_light = ExtResource("4_tchc4")
+tool_trash_can = ExtResource("5_h0l6a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_tchc4")

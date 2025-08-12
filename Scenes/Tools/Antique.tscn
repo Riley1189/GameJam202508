@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bte812k2lfxnd"]
+[gd_scene load_steps=4 format=3 uid="uid://bte812k2lfxnd"]
 
+[ext_resource type="Script" uid="uid://1milhg6xlpq" path="res://Scripts/antique.gd" id="1_pechq"]
 [ext_resource type="Texture2D" uid="uid://b3qwtuumcmwqw" path="res://Sprites/Museum_Singles_44.png" id="1_v3k8d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v3k8d"]
 
 [node name="Antique" type="Area2D"]
+script = ExtResource("1_pechq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_v3k8d")

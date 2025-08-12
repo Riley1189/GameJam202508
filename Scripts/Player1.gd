@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 #movement
 @export var move_speed: float=100.0
 @export var speed_effect: float=0.0 #+加速-减速
@@ -29,7 +28,15 @@ var health: float=100
 var damage_effect: float=0.0#用于减少/增加伤害的 +暴击buff
 var defend_effect: float=0.0#用于减少/增加伤害的 -易伤buff
 
-#不太确定，要把死亡信息往上传
+@export var tool_antique: PackedScene
+@export var tool_hydrant: PackedScene
+@export var tool_traffic_light: PackedScene
+@export var tool_trash_can: PackedScene
+#这里是每轮中对应的确定的武器是啥。
+var tool_node: ToolBase
+
+
+#不太确定，要把死亡信息往上传,
 signal died(who)
 
 
@@ -97,6 +104,35 @@ func new_round_change(tools_number1:int,effect_number1:int) ->void:
 	can_left=true
 	can_right=true
 	can_up=true
+	#此处为player分配该轮的武器：
+	match tools_number1:
+		1:
+			tool_node=tool_antique.instantiate()
+		2:
+			tool_node=tool_hydrant.instantiate()
+		3:
+			tool_node=tool_traffic_light.instantiate()
+		4:
+			tool_node=tool_trash_can.instantiate()
+		5:
+			tool_node=tool_antique.instantiate()
+		6:
+			tool_node=tool_traffic_light.instantiate()
+			
+	#=====小心这里后续需要更改为vector从gamemanagement中进行参数传递
+	tool_node.setup(self,Vector2(-45,0))
+	get_tree().current_scene.add_child(tool_node)
+	
+	
+	#此处是player的effect的变化，具体变化如下：
+	#- 增益
+	#1：~~防御增加10%~~ 修改为限制防御减少10%易伤buff
+	#2：攻击增加10%
+	#3：移动速度20%
+	#4：隐身（抽象）自己隐藏，敌我不可见，但是武器不隐藏（？
+#- 限制
+	#5：扣掉一个随机方向键
+	#6：移动速度-20%
 	match effect_number1:
 		1:
 			defend_effect=-0.2

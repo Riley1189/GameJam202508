@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwb370g7xbwij"]
+[gd_scene load_steps=9 format=3 uid="uid://dwb370g7xbwij"]
 
+[ext_resource type="Script" uid="uid://c4ek3t4ikfp4t" path="res://Scripts/hydrant.gd" id="1_18grw"]
 [ext_resource type="Texture2D" uid="uid://t74rnam3f6l6" path="res://Sprites/Fire_Hydrant_Water_Jet_16x16.png" id="1_hh6qx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5a3y"]
@@ -42,10 +43,10 @@ animations = [{
 }]
 
 [node name="Hydrant" type="Area2D"]
+script = ExtResource("1_18grw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(32, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r5a3y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

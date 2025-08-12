@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh3kmehode8x4"]
+[gd_scene load_steps=11 format=3 uid="uid://bh3kmehode8x4"]
 
 [ext_resource type="Texture2D" uid="uid://cdaqdbftaov3j" path="res://Sprites/Dumpster_empty_16x16.png" id="1_hrhs6"]
+[ext_resource type="Script" uid="uid://2gqqtbentvdv" path="res://Scripts/trash_can.gd" id="1_x0icv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eavrt"]
 size = Vector2(20, 9)
@@ -56,6 +57,7 @@ animations = [{
 }]
 
 [node name="TrashCan" type="Area2D"]
+script = ExtResource("1_x0icv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 16.5)
