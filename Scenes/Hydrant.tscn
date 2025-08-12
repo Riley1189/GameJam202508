@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwb370g7xbwij"]
+
+[ext_resource type="Texture2D" uid="uid://t74rnam3f6l6" path="res://Sprites/Fire_Hydrant_Water_Jet_16x16.png" id="1_hh6qx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5a3y"]
+size = Vector2(55.4921, 11.9929)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkw6s"]
+atlas = ExtResource("1_hh6qx")
+region = Rect2(0, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_he8bv"]
+atlas = ExtResource("1_hh6qx")
+region = Rect2(48, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ycv0"]
+atlas = ExtResource("1_hh6qx")
+region = Rect2(96, 0, 48, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjshd"]
+atlas = ExtResource("1_hh6qx")
+region = Rect2(144, 0, 48, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs36a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkw6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_he8bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ycv0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjshd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}]
+
+[node name="Hydrant" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.74602, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r5a3y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_fs36a")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.868394

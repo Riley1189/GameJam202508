@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djix5ocbtro63"
-path="res://.godot/imported/Fire_Hydrant_Water_Jet_32x32.png-3a6d264da62a5a36893efcad6bcdd388.ctex"
+uid="uid://t74rnam3f6l6"
+path="res://.godot/imported/Fire_Hydrant_Water_Jet_16x16.png-9e161229affa957226662a59fad40a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Fire_Hydrant_Water_Jet_32x32.png"
-dest_files=["res://.godot/imported/Fire_Hydrant_Water_Jet_32x32.png-3a6d264da62a5a36893efcad6bcdd388.ctex"]
+source_file="res://Sprites/Fire_Hydrant_Water_Jet_16x16.png"
+dest_files=["res://.godot/imported/Fire_Hydrant_Water_Jet_16x16.png-9e161229affa957226662a59fad40a65.ctex"]
 
 [params]
 
