@@ -16018,6 +16018,7 @@ tile_map_data = PackedByteArray("AAAGAAIAAgARABkAAAAGAAMAAgARABoAAAD2/wQAAgAIAGg
 tile_set = ExtResource("1_2irst")
 
 [node name="Player1" parent="." instance=ExtResource("9_bf53h")]
+position = Vector2(-43, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
