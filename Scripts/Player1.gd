@@ -29,6 +29,8 @@ var health: float=100
 var damage_effect: float=0.0#用于减少/增加伤害的 +暴击buff
 var defend_effect: float=0.0#用于减少/增加伤害的 -易伤buff
 
+#不太确定，要把死亡信息往上传
+signal died(who)
 
 
 # Called when the node enters the scene tree for the first time.
@@ -49,8 +51,9 @@ func _process(delta: float) -> void:
 			return
 			
 		#movement
-		if not is_visible:
-			$AnimatedSprite2D.visible=is_visible
+		#if not is_visible:
+			#$AnimatedSprite2D.visible=is_visible
+		$AnimatedSprite2D.visible=is_visible
 		velocity=Input.get_vector("left1","right1","up1","down1")*move_speed*(1+speed_effect)
 		if !can_left and velocity.x<0:
 			velocity.x=0
@@ -122,9 +125,9 @@ func new_round_change(tools_number1:int,effect_number1:int) ->void:
 	
  
 func game_over():
-	is_game_over=true
+	#is_game_over=true
 	animator.play("Game_over")
-	await get_tree().create_timer(3).timeout	
+	await get_tree().create_timer(3).timeout
 	#get_tree().reload_current_scene()
 
 #检测是否按键以及可以攻击，然后
@@ -137,3 +140,5 @@ func _on_fire() -> void:
 		#get_tree().current_scene.add_child(bullet_node
 
 #func current_tool.destroy() → current_tool = null
+#用于扣除伤害的
+#func apply_damage()
